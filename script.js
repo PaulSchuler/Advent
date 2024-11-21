@@ -135,6 +135,16 @@ function openImageModal(imageSrc) {
         event.preventDefault();
     });
 
+    const imgContainer = document.createElement('div');
+    imgContainer.style.backgroundImage = `url(${imageSrc})`;
+    imgContainer.style.backgroundSize = 'contain';
+    imgContainer.style.backgroundRepeat = 'no-repeat';
+    imgContainer.style.backgroundPosition = 'center';
+    imgContainer.style.width = '80vw'; // Größe anpassen
+    imgContainer.style.height = '80vh'; // Größe anpassen
+    imgContainer.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+    });
 
     // Schließen-Button
     const closeButton = document.createElement('span');
@@ -152,7 +162,8 @@ function openImageModal(imageSrc) {
     });
 
     // Modal zusammenbauen
-    modal.appendChild(img);
+    modal.appendChild(imgContainer);
+    //modal.appendChild(img);
     modal.appendChild(closeButton);
     document.body.appendChild(modal);
 }
