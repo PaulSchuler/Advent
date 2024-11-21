@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Nimmt die gesamte Breite des Viewports ein */
+    height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
+    background-color: #672222;
+    overflow: hidden; /* Verhindert Scrollbalken */
+}
+
+#responsiveDiv {
+    position: relative;
+    background-color: rgba(182, 111, 17, 0); /* Farbe des Divs */
+    aspect-ratio: 1 / 1.3; /* Verhältnis von Breite zu Höhe */
+    width: 90%; /* Nimmt 90% der Breite des Bildschirms ein */
+    max-width: 600px; /* Begrenze die maximale Breite (z. B. auf einem Desktop) */
+    border-radius: 10px; /* Abgerundete Ecken */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Verhindert, dass Inhalte aus dem Div herausragen */
+    text-align: center; /* Zentriert den Text */
+    color: navy;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    background-image: url("img/tree.png");
+    background-size: cover; /* Bild passt sich an die Größe des Divs an */
+    background-position: top;
+    background-repeat: no-repeat; /* Bild wird nicht wiederholt */
+}
+
+.rectangle {
+    position: relative; /* Absolut positioniert innerhalb des responsiveDiv */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid white;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(255, 127, 80, 0.26); /* Basisfarbe des Kreises (falls keine dynamische Farbe gesetzt wird) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Optional: Schatten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Shiny-Effekt mit ::before */
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 1), transparent 75%);
+    border-radius: 50%;
+    transform: translate(-10%, -10%);
+    pointer-events: none; /* Der Effekt ist rein visuell, keine Interaktion möglich */
+}
+
+.star {
+    position: absolute;
+    background-size: cover; /* Verhindert Verzerrungen des Bildes */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-text {
+    color: black; /* Schwarzer Text */
+    font-size: 0.8rem; /* Schriftgröße */
+    font-weight: bold; /* Fett */
+}
+
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Hintergrund mit Transparenz */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1001;
+}
+
+.flying {
+    position: absolute;
+    top: 50%; /* Höhe über dem Hintergrundbild */
+    left: -150px; /* Startpunkt (außerhalb des Bildschirms) */
+    width: 100px; /* Größe des fliegenden Objekts */
+    animation: fly 30s linear infinite; /* Animation mit Endloswiederholung */
+    transition: top 25s ease; /* Sanfter Übergang der Flughöhe */
+}
+
+@keyframes fly {
+    0% {
+        left: -500px; /* Startpunkt links außerhalb des Bildschirms */
+    }
+    100% {
+        left: 110%; /* Endpunkt rechts außerhalb des Bildschirms */
+    }
+}
