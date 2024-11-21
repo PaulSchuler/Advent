@@ -135,6 +135,7 @@ function openImageModal(imageSrc) {
         event.preventDefault();
     });
 
+
     // Schließen-Button
     const closeButton = document.createElement('span');
     closeButton.textContent = '×';
