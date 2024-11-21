@@ -131,6 +131,10 @@ function openImageModal(imageSrc) {
     const img = document.createElement('img');
     img.src = imageSrc;
     img.classList.add('modal-image');
+    img.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+    });
+
 
     // Schließen-Button
     const closeButton = document.createElement('span');
