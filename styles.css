@@ -87,6 +87,11 @@ body {
     z-index: 1000;
 
 }
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
 
 .modal-image {
     max-width: 90%;
