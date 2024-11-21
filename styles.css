@@ -19,7 +19,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Verhindert, dass Inhalte aus dem Div herausragen */
     text-align: center; /* Zentriert den Text */
     color: navy;
     font-family: Arial, sans-serif;

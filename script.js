@@ -24,7 +24,7 @@ const rectangles = [
     { x: 79, y: 60, day: 23, img: null },
 
 ];
-const doorColor= ["#1f24a9", "#e8c014", "#a89898", "#b111b7"]
+const doorColor= ["#0022ff", "#e8c014", "#a89898", "#b71111"]
 createDoors();
 /*function adjustDivSize() {
     const aspectRatio = 1 / 2; // Define the aspect ratio
@@ -74,7 +74,7 @@ function createDoors() {
     star.style.height = `${(15 / 100) * divWidth}px`;
     // Position relativ zur Div-Breite/-Höhe
     star.style.left = `${(42 / 100) * divWidth}px`;
-    star.style.top = `${(-1 / 100) * divHeight}px`;
+    star.style.top = `${(-4 / 100) * divHeight}px`;
     // Text (Day) hinzufügen
     const dayText = document.createElement('span');
     dayText.textContent = "24";
