@@ -177,7 +177,8 @@ function openImageModal(imageSrc) {
     // Modal zusammenbauen
     modal.appendChild(img);
     modal.appendChild(closeButton);
-    document.body.appendChild(modal);
+    //document.body.appendChild(modal);
+    document.getElementById("claus-container").appendChild(modal)
 }
 
 

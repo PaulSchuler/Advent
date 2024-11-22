@@ -106,6 +106,16 @@ body {
     z-index: 1001;
 }
 
+.claus-container{
+    width: 100%; /* 100% der Breite des Ansichtsfensters */
+    height: 100%; /* 100% der Höhe des Ansichtsfensters */
+    overflow: hidden; /* Versteckt überstehende Inhalte */
+    position: relative; /* Stellt sicher, dass das img absolut positioniert werden kann */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 .flying {
     position: absolute;
     top: 50%; /* Höhe über dem Hintergrundbild */
