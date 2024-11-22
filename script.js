@@ -25,7 +25,30 @@ const rectangles = [
 
 ];
 const doorColor= ["#0022ff", "#e8c014", "#a89898", "#b71111"]
-createDoors();
+
+// Überprüfen, ob der Nutzer schon einmal da war
+if (localStorage.getItem('visited')) {
+    createDoors();
+} else {
+    // Popup mit Eingabeaufforderung
+    const userInput = prompt('Bitte gib Liv`s zweiten namen ein:');
+
+// Überprüfung der Eingabe
+    if (userInput) {
+        if (userInput.length >= 3) {
+            if (userInput === "Henriette"){
+                localStorage.setItem('visited', 'true'); // Markierung setzen
+                createDoors();
+            }
+        } else {
+            alert('Das war leider Falsch');
+        }
+    } else {
+        alert('Eingabe abgebrochen.');
+    }
+}
+
+
 /*function adjustDivSize() {
     const aspectRatio = 1 / 2; // Define the aspect ratio
     const maxWidth = window.innerWidth;
