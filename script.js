@@ -184,7 +184,8 @@ setInterval(updateFlyingObjectPosition, 15000);
 updateFlyingObjectPosition();
 function updateFlyingObjectPosition() {
     const flyingObject = document.getElementById('flying-object');
-    const randomNumber = Math.floor(Math.random() * (80 - 20 + 1)) + 20;
+    const randomNumber = Math.floor(Math.random() * (70 - 10 + 1)) + 10;
+    console.log(randomNumber)
     flyingObject.style.top = `${randomNumber}%`;
 }
 
