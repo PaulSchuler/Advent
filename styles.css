@@ -72,6 +72,10 @@ body {
     color: black; /* Schwarzer Text */
     font-size: 0.8rem; /* Schriftgröße */
     font-weight: bold; /* Fett */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 .image-modal {

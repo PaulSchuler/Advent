@@ -63,7 +63,6 @@ let bilder = [];
 // Funktion zum Testen des Zugriffs (Passwortprüfung)
 async function testAccess() {
     const test = await loadAndUnzip();
-    console.log(test);
     return test;
 }
 
@@ -160,14 +159,12 @@ function openImageModal(day) {
     closeButton.textContent = '×';
     closeButton.classList.add('close-button');
     closeButton.addEventListener('click', () => {
-        URL.revokeObjectURL(img.src);
         modal.remove(); // Entfernt das Modal
     });
 
     // Modal schließt auch bei Klick außerhalb des Bildes
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
-            URL.revokeObjectURL(img.src);
             modal.remove(); // Entfernt das Modal
         }
     });
@@ -229,7 +226,7 @@ async function loadAndUnzip() {
             }
         }
         bilder = images;
-        console.log(bilder);
+        //console.log(bilder);
 
         await reader.close();
         return true;
