@@ -145,7 +145,7 @@ function openImageModal(day) {
     // Erstelle das Bild
     const img = document.createElement('img');
     if (day === 24) {
-        img.src = 'img/24.png'; // Spezielles Bild für den 24.
+        img.src = 'img/24.jpg'; // Spezielles Bild für den 24.
     } else {
         img.src = bilder[day - 1];
     }
