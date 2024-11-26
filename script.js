@@ -94,7 +94,7 @@ function createDoors() {
     dayText.classList.add('day-text');
     star.appendChild(dayText);
     star.addEventListener('click', () => {
-        if (monthNow === 12 && 24 <= dayNow) {
+        if (monthNow === 11 && 24 <= dayNow) {
             openImageModal(24);
         } else {
             alert('Dieses Türchen ist noch nicht verfügbar!');
@@ -144,11 +144,7 @@ function openImageModal(day) {
 
     // Erstelle das Bild
     const img = document.createElement('img');
-    if (day === 24) {
-        img.src = 'img/24.jpg'; // Spezielles Bild für den 24.
-    } else {
-        img.src = bilder[day - 1];
-    }
+    img.src = bilder[day - 1];
     img.classList.add('modal-image');
     img.addEventListener('contextmenu', (event) => {
         event.preventDefault();
