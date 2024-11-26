@@ -137,3 +137,18 @@ body {
         left: 110%; /* Endpunkt rechts außerhalb des Bildschirms */
     }
 }
+
+.loading-image {
+    width: 30%; /* Größe des Bildes */
+    height: 30%;
+    animation: loading-spin 4s linear infinite; /* Animationseigenschaften */
+}
+
+@keyframes loading-spin {
+    from {
+        transform: rotate(0deg); /* Start bei 0 Grad */
+    }
+    to {
+        transform: rotate(360deg); /* Ende bei 360 Grad */
+    }
+}

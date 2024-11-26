@@ -69,6 +69,7 @@ async function testAccess() {
 
 // Funktion zum Erstellen der Türen
 function createDoors() {
+    document.getElementsByClassName('loading-image')[0].style.visibility = "hidden";
     const div = document.getElementById('responsiveDiv');
     const divWidth = div.clientWidth;
     const divHeight = div.clientHeight;
