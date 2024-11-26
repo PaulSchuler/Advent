@@ -37,7 +37,8 @@ let bilder = [];
         let attempts = 0;
         const maxAttempts = 3; // Optional: Maximale Anzahl von Versuchen
         while (!accessGranted && attempts < maxAttempts) {
-            const userInput = prompt('Bitte gib Liv`s zweiten Namen ein:');
+            const userInputOrg = prompt('Bitte gib Liv`s zweiten Namen ein:');
+            const userInput = userInputOrg.trim()
             if (userInput) {
                 localStorage.setItem('password', userInput);
                 accessGranted = await testAccess();
