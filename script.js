@@ -96,7 +96,7 @@ function createDoors() {
     dayText.classList.add('day-text');
     star.appendChild(dayText);
     star.addEventListener('click', () => {
-        if (monthNow === 11 && 24 <= dayNow) {
+        if (monthNow === 12 && 24 <= dayNow) {
             openImageModal(24);
         } else {
             alert('Dieses Türchen ist noch nicht verfügbar!');
@@ -128,7 +128,7 @@ function createDoors() {
 
         // Klick-Event für den Kreis
         circle.addEventListener('click', () => {
-            if (monthNow === 11 && day <= dayNow) {
+            if (monthNow === 12 && day <= dayNow) {
                 openImageModal(day);
             }
         });
