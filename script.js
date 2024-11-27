@@ -98,8 +98,6 @@ function createDoors() {
     star.addEventListener('click', () => {
         if (monthNow === 12 && 24 <= dayNow) {
             openImageModal(24);
-        } else {
-            alert('Dieses Türchen ist noch nicht verfügbar!');
         }
     });
     div.appendChild(star);
@@ -183,7 +181,6 @@ updateFlyingObjectPosition();
 function updateFlyingObjectPosition() {
     const flyingObject = document.getElementById('flying-object');
     const randomNumber = Math.floor(Math.random() * (70 - 10 + 1)) + 10;
-    console.log(randomNumber)
     flyingObject.style.top = `${randomNumber}%`;
 }
 

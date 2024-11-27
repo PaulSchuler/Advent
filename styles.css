@@ -14,7 +14,7 @@ body {
     background-color: rgba(182, 111, 17, 0); /* Farbe des Divs */
     aspect-ratio: 1 / 1.3; /* Verhältnis von Breite zu Höhe */
     width: 90%; /* Nimmt 90% der Breite des Bildschirms ein */
-    max-width: 600px; /* Begrenze die maximale Breite (z. B. auf einem Desktop) */
+    max-width: 500px; /* Begrenze die maximale Breite (z. B. auf einem Desktop) */
     border-radius: 10px; /* Abgerundete Ecken */
     display: flex;
     justify-content: center;
