@@ -1,4 +1,6 @@
+import * as zip from 'https://deno.land/x/zipjs/index.js';
 // Definieren der Positionen und Tage für die Türen
+
 const rectangles = [
     { x: 55, y: 49, day: 1 },
     { x: 72, y: 83, day: 2 },
@@ -45,7 +47,7 @@ let bilder = [];
                 if (accessGranted) {
                     createDoors();
                 } else {
-                    alert('Falsches Passwort. Bitte versuchen Sie es erneut.');
+                    alert('Falsches Passwort. Bitte versuche es erneut.');
                     localStorage.removeItem('password');
                     attempts++;
                 }
@@ -74,8 +76,11 @@ function createDoors() {
     const divWidth = div.clientWidth;
     const divHeight = div.clientHeight;
     const date = new Date();
-    const monthNow = date.getMonth() + 1; // Monate sind 0-basiert
-    const dayNow = date.getDate();
+    //DEBUG
+    //const monthNow = date.getMonth() + 1; // Monate sind 0-basiert
+    //const dayNow = date.getDate();
+    const monthNow = 12
+    const dayNow = 25
 
     // Alte Kreise entfernen
     div.innerHTML = '';
