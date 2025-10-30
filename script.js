@@ -4,7 +4,7 @@ import * as zip from 'https://deno.land/x/zipjs/index.js';
 const MAX_PASSWORD_ATTEMPTS = 3;
 const FLYING_ANIMATION_INTERVAL = 15000; // 15 Sekunden
 const DOOR_COLORS = ["#0022ff", "#e8c014", "#a89898", "#b71111"];
-const DEBUG_DATE = true; // Auf 'false' setzen für Live-Betrieb
+const DEBUG_DATE = false; // Auf 'false' setzen für Live-Betrieb
 
 // Definition der Türen (Tag 1-23)
 const rectangles = [
