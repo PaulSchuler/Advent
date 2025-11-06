@@ -8,7 +8,7 @@ const DEBUG_DATE = false; // Auf 'false' setzen für Live-Betrieb
 
 // Definition der Türen (Tag 1-23)
 const rectangles = [
-    { x: 55, y: 49, day: 1 }, { x: 72, y: 83, day: 2 }, { x: 63, y: 19, day: 3 },
+    { x: 55, y: 49, day: 1 }, { x: 72, y: 78, day: 2 }, { x: 63, y: 19, day: 3 },
     { x: 33, y: 48, day: 4 }, { x: 0, y: 78, day: 5 }, { x: 38, y: 62, day: 6 },
     { x: 24, y: 68, day: 7 }, { x: 70, y: 45, day: 8 }, { x: 16, y: 80, day: 9 },
     { x: 91, y: 78, day: 10 }, { x: 30, y: 20, day: 11 }, { x: 80, y: 48, day: 12 },
@@ -19,6 +19,12 @@ const rectangles = [
 ];
 // Definition für Tag 24 (Stern)
 const starData = { x: 42, y: -4, day: 24, size: 15 };
+
+// NEU: Definition für den Würfel
+// x: 85 (85% von links), y: 85 (85% von oben) -> unten rechts
+// Passe 'link' an dein gewünschtes Ziel an.
+const diceData = { x: 70, y: 82.5, size: 25, link: 'https://paulschuler.github.io/Wuerfel-Spiel/' };
+
 
 // --- Globale Variablen ---
 let bilder = [];
@@ -103,6 +109,35 @@ function createDoors() {
     rectangles.forEach(({ x, y, day }) => {
         createDoorElement({ x, y, day, size: 7 }, divWidth, divHeight, false);
     });
+
+    // --- HINZUGEFÜGT: Würfel erstellen ---
+    const { x, y, size, link } = diceData;
+
+    const dice = document.createElement('div');
+    dice.classList.add('dice-element'); // Für optionales CSS-Styling
+
+    // Größe und Position
+    const elementSize = (size / 100) * divWidth;
+    dice.style.width = `${elementSize}px`;
+    dice.style.height = `${elementSize}px`;
+    dice.style.left = `${(x / 100) * divWidth}px`;
+    dice.style.top = `${(y / 100) * divHeight}px`;
+
+    // Styling
+    dice.style.position = 'absolute'; // Wichtig für die Positionierung
+    dice.style.backgroundImage = `url("img/dice.png")`;
+    dice.style.backgroundSize = 'contain';
+    dice.style.backgroundRepeat = 'no-repeat';
+    dice.style.backgroundPosition = 'center';
+    dice.style.cursor = 'pointer'; // Zeigt, dass man klicken kann
+
+    // Klick-Event (öffnet Link in neuem Tab)
+    dice.addEventListener('click', () => {
+        window.open(link, '_blank');
+    });
+
+    responsiveDiv.appendChild(dice);
+    // --- ENDE HINZUGEFÜGTER CODE ---
 }
 
 /**

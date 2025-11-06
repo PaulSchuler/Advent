@@ -152,3 +152,34 @@ body {
         transform: rotate(360deg); /* Ende bei 360 Grad */
     }
 }
+
+/* --- NEU: Würfel-Animation --- */
+
+/* * Definiert die Keyframes für die "Wackel"-Animation.
+ * Die Animation passiert in den ersten 20% ihrer Dauer.
+ * Von 20% bis 100% "pausiert" sie (bleibt bei rotate(0deg)).
+*/
+@keyframes wobble {
+    0%, 20%, 100% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(8deg);
+    }
+    10% {
+        transform: rotate(-8deg);
+    }
+    15% {
+        transform: rotate(8deg);
+    }
+}
+
+/* * Wendet die Animation auf das Würfel-Element an.
+*/
+.dice-element {
+    /* Name: wobble (von oben)
+       Dauer: 8s (Gesamtlänge, inkl. Pause)
+       Wiederholung: infinite (unendlich)
+    */
+    animation: wobble 4s infinite;
+}
